@@ -1,0 +1,8 @@
+{
+  "name": "Official Product Website Platform",
+  "description": "A centralized, scalable product website platform to host, showcase, and distribute all current and future applications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
