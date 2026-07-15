@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { appsData as initialAppsData, AppData, AppLink } from "@/lib/data/apps";
 import { blogPosts as initialBlogPosts, BlogPost } from "@/lib/data/blog";
@@ -31,12 +31,21 @@ export default function AdminDashboard() {
   
   const [apps, setApps] = useState<AppData[]>(initialAppsData);
   const [blogs, setBlogs] = useState<BlogPost[]>(initialBlogPosts);
-
   const [editingApp, setEditingApp] = useState<AppData | null>(null);
   const [editingBlog, setEditingBlog] = useState<BlogPost | null>(null);
   
   const [isSaving, setIsSaving] = useState(false);
   const [fallbackData, setFallbackData] = useState<{type: string, content: string} | null>(null);
+
+  useEffect(() => {
+    fetch('/api/data')
+      .then(res => res.json())
+      .then(data => {
+        if (data.appsData && data.appsData.length > 0) setApps(data.appsData);
+        if (data.blogPosts && data.blogPosts.length > 0) setBlogs(data.blogPosts);
+      })
+      .catch(console.error);
+  }, []);
 
   if (!isAuthenticated) {
     return (
