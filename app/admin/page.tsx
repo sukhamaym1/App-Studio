@@ -270,7 +270,7 @@ export default function AdminPage() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium">What's New in this version</label>
+              <label className="text-sm font-medium">What&apos;s New in this version</label>
               <textarea 
                 className="w-full rounded-xl border border-input bg-background px-3 py-2 min-h-[80px]"
                 value={formData.whatsNew}

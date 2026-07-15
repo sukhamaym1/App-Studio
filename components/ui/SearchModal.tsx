@@ -36,6 +36,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
       }, 100);
     } else {
       document.body.style.overflow = "unset";
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSearchQuery(""); // clear search on close
     }
     return () => {

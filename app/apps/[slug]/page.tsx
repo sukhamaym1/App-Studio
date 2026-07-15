@@ -144,7 +144,7 @@ export default async function AppDetailsPage({ params }: { params: Promise<{ slu
 
           {/* What's New */}
           <section className="p-8 rounded-2xl bg-primary/5 border border-primary/10">
-            <h2 className="text-2xl font-bold mb-4">What's New in {app.version}</h2>
+            <h2 className="text-2xl font-bold mb-4">What&apos;s New in {app.version}</h2>
             <p className="text-muted-foreground leading-relaxed">{app.whatsNew}</p>
           </section>
         </div>
