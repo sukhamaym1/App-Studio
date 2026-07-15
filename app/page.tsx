@@ -1,9 +1,9 @@
 import { appsData } from "@/lib/data/apps";
 import { AppCard } from "@/components/ui/AppCard";
 import { Button } from "@/components/ui/button";
+import { HeroSection } from "@/components/ui/HeroSection";
 import Link from "next/link";
 import { ArrowRight, Box, Zap, Shield, Rocket } from "lucide-react";
-import Image from "next/image";
 
 export default function Home() {
   const featuredApps = appsData.filter(app => app.isFeatured);
@@ -12,34 +12,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-background pt-24 pb-32 sm:pt-32 sm:pb-40">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 opacity-20 blur-[100px]"></div>
-        
-        <div className="container mx-auto max-w-7xl px-4 relative z-10 text-center">
-          <div className="inline-flex items-center rounded-full border border-border/50 bg-muted/50 px-3 py-1 text-sm mb-8 backdrop-blur-sm">
-            <span className="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
-            Building tools for the future
-          </div>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-space font-bold tracking-tight text-foreground max-w-4xl mx-auto mb-6">
-            Software built for <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">
-              productivity & scale.
-            </span>
-          </h1>
-          <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-            Discover our suite of premium applications designed to simplify your workflows, manage your finances, and boost your daily productivity.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" asChild className="w-full sm:w-auto rounded-full px-8">
-              <Link href="/apps">Explore Applications</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="w-full sm:w-auto rounded-full px-8 bg-background/50 backdrop-blur-sm">
-              <Link href="/downloads">Download Center</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Featured Applications */}
       <section className="py-24 bg-muted/30">
